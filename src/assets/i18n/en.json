@@ -1,8 +1,11 @@
 {
   "PAGES": {
       "HOME": {
-          "TITLE": "App works !",
-          "GO_TO_LOGIN": "Register"
+          "TITLE": "Vhex Chat",
+          "LOGOUT": "Logout",
+          "SPACES": "Chat Groups",
+          "VALIDATE": "Send",
+          "INPUT": "Message:"
       },
       "LOGIN": {
         "TITLE": "Login page",

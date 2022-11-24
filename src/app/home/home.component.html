@@ -1,7 +1,33 @@
 <div class="container">
-  <h1 class="title">
-    {{ 'PAGES.HOME.TITLE' | translate }}
-  </h1>
-
-  <a routerLink="/login">{{ 'PAGES.HOME.GO_TO_LOGIN' | translate }}</a>
+  <div id="Vhexheader">
+    <h1 class="title">
+      {{ 'PAGES.HOME.TITLE' | translate }} - {{ currentRoom.name }}
+    </h1>
+    <div>
+      <button type="button" (click)="logout()">{{ 'PAGES.HOME.LOGOUT' | translate }}</button>
+    </div>
+  </div>
+  <section>
+    <aside class="groupChat">
+      <h3>{{ 'PAGES.HOME.SPACES' | translate }}</h3>
+      <div *ngFor="let r of rooms">
+        <li (click)="joinRoom(r.chatId)">
+          {{ r.name }}
+        </li>
+      </div>
+    </aside>
+    <article class="chat">
+      <div *ngFor="let msg of messagesList">
+        <li>
+          <div class="message-date">{{ msg.timestamp | date }}</div>
+          <div class="message-data">{{ msg.body }}</div>
+        </li>
+      </div>
+      <div class="input-form">
+        <label for="message">{{ 'PAGES.HOME.INPUT' | translate }}</label>
+        <input id="message" [(ngModel)]="newMessage" (keyup)="$event.keyCode === 13 && sendMessage()" />
+        <button (click)="sendMessage()">{{ 'PAGES.HOME.VALIDATE' | translate }}</button>
+      </div>
+    </article>
+  </section>
 </div>
