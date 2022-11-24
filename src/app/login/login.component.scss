@@ -51,6 +51,13 @@ div.button {
     font-weight: bold;
 }
 
+.alert {
+    background-color: rgba(133,6,6,.6);
+    border: 1px solid rgb(133,6,6);
+    padding: .1em;
+    font-style: italic;
+}
+
 .vhex-btn-primary:hover {
     background-color: lightgrey;
     cursor: pointer;
