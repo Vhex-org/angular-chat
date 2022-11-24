@@ -1,29 +1,56 @@
-<mat-card>
-	<mat-card-title>{{ 'PAGES.LOGIN.TITLE' | translate }}</mat-card-title>
-	<mat-card-content>
-    <p>{{ 'PAGES.TITLE.INFO' | translate }}</p>
+<div>
+  <h1>{{ "PAGES.LOGIN.TITLE" | translate }}</h1>
+  <section>
+    <p>{{ "PAGES.LOGIN.INFO" | translate }}</p>
     <form [formGroup]="loginForm" (ngSubmit)="login()">
-      <p>
-        <mat-form-field appearance="fill">
-          <mat-label>{{ 'PAGES.LOGIN.EMAIL' | translate }}</mat-label>
-          <input type="text" required matInput placeholder="email@example.com" formControlName="mail">
-        </mat-form-field>
+      <div appearance="fill">
+        <label>{{ "PAGES.LOGIN.EMAIL" | translate }}</label>
+        <input
+          type="text"
+          required
+          placeholder="email@example.com"
+          formControlName="email"
+        />
+      </div>
+      <p
+        *ngIf="
+          loginForm.controls['email'].invalid &&
+          (loginForm.controls['email'].dirty ||
+            loginForm.controls['email'].touched)
+        "
+        class="alert"
+      >
+        {{ "PAGES.LOGIN.EMAIL_ERROR" | translate }}
       </p>
-      <p *ngIf="loginForm.controls['mail'].invalid && (loginForm.controls['mail'].dirty || loginForm.controls['mail'].touched)" class="alert">
-        {{ 'PAGES.TITLE.EMAIL_ERROR' | translate }}
-      </p>
-      <p>
-        <mat-form-field appearance="fill">
-          <mat-label>{{ 'PAGES.TITLE.PASSWORD' | translate }}</mat-label>
-          <input type="password" required matInput placeholder="Secret" formControlName="password">
-        </mat-form-field>
-      </p>
-      <p *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="alert">
-        {{ 'PAGES.TITLE.PASSWORD_ERROR' | translate }}
+      <div appearance="fill">
+        <label>{{ "PAGES.LOGIN.PASSWORD" | translate }}</label>
+        <input
+          type="password"
+          required
+          placeholder="Secret"
+          formControlName="password"
+        />
+      </div>
+      <p
+        *ngIf="
+          loginForm.controls['password'].invalid &&
+          (loginForm.controls['password'].dirty ||
+            loginForm.controls['password'].touched)
+        "
+        class="alert"
+      >
+        {{ "PAGES.LOGIN.PASSWORD_ERROR" | translate }}
       </p>
       <div class="button">
-        <button mat-raised-button color=primary type="button" type="submit" [disabled]="!loginForm.valid">{{ 'PAGES.TITLE.VALIDATE' | translate }}</button>
+        <button
+          color="primary"
+          type="button"
+          type="submit"
+          [disabled]="!loginForm.valid"
+        >
+          {{ "PAGES.LOGIN.VALIDATE" | translate }}
+        </button>
       </div>
     </form>
-	</mat-card-content>
-</mat-card>
+  </section>
+</div>

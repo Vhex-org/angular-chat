@@ -8,16 +8,18 @@ import { UserService } from '../service/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-
   loginForm = new FormGroup({
-    mail: new FormControl('', [ Validators.required, Validators.email ]),
-    password: new FormControl('', [ Validators.required, Validators.minLength(6) ])
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
   });
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     console.log('LoginComponent INIT');
