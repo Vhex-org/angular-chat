@@ -1,3 +1,122 @@
-:host {
-  
+.account-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 80px auto;
+    padding: 50px 5vw;
+    width: 70vw;
+    max-width: 1300px;
+}
+
+.account-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: fit-content;
+    margin: 0 2.5vw;
+    height: auto;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #003a51;
+    border: 1px solid transparent;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0.2em;
+    input {
+        margin: 3px;
+    }
+}
+
+div.button {
+    display: flex;
+    justify-content: center;
+}
+
+.vhex-btn-primary,
+.vhex-btn-primary:focus {
+    --vhex-gold: #B99641;
+    display: flex;
+    background-color: var(--vhex-gold);
+    border-radius: .5rem;
+    padding: 8px 16px;
+    color: white;
+    height: fit-content;
+    white-space: nowrap;
+    box-shadow: none;
+    font-size: large;
+    font-weight: bold;
+}
+
+.vhex-btn-primary:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.account-container.active-account-bloc {
+    opacity: 1;
+    border: 1px solid #B99641;
+}
+
+.account-title::first-letter {
+    color: #B99641;
+}
+
+.account-content * {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.account-input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-input-container > input {
+    margin-top: 20px;
+    padding: 10px;
+    background: #001120;
+    border: 0;
+    border-bottom: 1px solid #B99641;
+    color: white;
+    font-weight: bold;
+}
+
+.account-pw {
+    align-self: end;
+    position: relative;
+    margin-top: -30px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.account-input-container > input:focus {
+    color: white;
+    font-weight: 200;
+    outline: 1px solid #B99641;
+    border: 0;
+}
+
+.account-input-container > input::placeholder {
+    color: white;
+    font-weight: 200;
+}
+
+.account-send-form {
+    border-radius: 25px;
+    border: 1px solid #B99641;
+    background: #001120;
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    width: 200px;
+    margin: 30px auto 0;
+}
+
+.account-send-form:hover {
+    background: #B99641;
+    color: white;
+    cursor: pointer;
 }

@@ -1,6 +1,6 @@
 // main
-// export const serverUrl = 'http://x2023vhex3818793104001.francecentral.cloudapp.azure.com:3000';
-export const serverUrl = 'http://192.168.1.35:3000';
+export const serverUrl = 'http://x2023vhex3818793104001.francecentral.cloudapp.azure.com:3000';
+// export const serverUrl = 'http://192.168.1.35:3000';
 
 // routes user
 export const user = {

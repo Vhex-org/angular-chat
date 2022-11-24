@@ -1,56 +1,37 @@
-<div>
-  <h1>{{ "PAGES.LOGIN.TITLE" | translate }}</h1>
-  <section>
+<div class="container">
+  <div class="account-container">
+    <h1 class="account-title account-sign-in gold-title">{{ "PAGES.LOGIN.TITLE" | translate }}</h1>
     <p>{{ "PAGES.LOGIN.INFO" | translate }}</p>
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-      <div appearance="fill">
-        <label>{{ "PAGES.LOGIN.EMAIL" | translate }}</label>
-        <input
-          type="text"
-          required
-          placeholder="email@example.com"
-          formControlName="email"
-        />
-      </div>
-      <p
-        *ngIf="
+    <section class="account-container login-account-content">
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="account-input-container">
+        <div class="input-container">
+          <label>{{ "PAGES.LOGIN.EMAIL" | translate }}</label>
+          <input type="text" required placeholder="email@example.com" formControlName="email" />
+        </div>
+        <p *ngIf="
           loginForm.controls['email'].invalid &&
           (loginForm.controls['email'].dirty ||
             loginForm.controls['email'].touched)
-        "
-        class="alert"
-      >
-        {{ "PAGES.LOGIN.EMAIL_ERROR" | translate }}
-      </p>
-      <div appearance="fill">
-        <label>{{ "PAGES.LOGIN.PASSWORD" | translate }}</label>
-        <input
-          type="password"
-          required
-          placeholder="Secret"
-          formControlName="password"
-        />
-      </div>
-      <p
-        *ngIf="
+        " class="alert">
+          {{ "PAGES.LOGIN.EMAIL_ERROR" | translate }}
+        </p>
+        <div class="input-container">
+          <label>{{ "PAGES.LOGIN.PASSWORD" | translate }}</label>
+          <input type="password" required placeholder="Secret" formControlName="password" />
+        </div>
+        <p *ngIf="
           loginForm.controls['password'].invalid &&
           (loginForm.controls['password'].dirty ||
             loginForm.controls['password'].touched)
-        "
-        class="alert"
-      >
-        {{ "PAGES.LOGIN.PASSWORD_ERROR" | translate }}
-      </p>
-      <div class="button">
-        <button
-          color="primary"
-          type="button"
-          type="submit"
-          [disabled]="!loginForm.valid"
-        >
-          {{ "PAGES.LOGIN.VALIDATE" | translate }}
-        </button>
-      </div>
-    </form>
-  </section>
+        " class="alert">
+          {{ "PAGES.LOGIN.PASSWORD_ERROR" | translate }}
+        </p>
+        <div class="button">
+          <button color="primary" type="button" type="submit" class="acount-send-form vhex-btn-primary" [disabled]="!loginForm.valid">
+            {{ "PAGES.LOGIN.VALIDATE" | translate }}
+          </button>
+        </div>
+      </form>
+    </section>
+  </div>
 </div>
