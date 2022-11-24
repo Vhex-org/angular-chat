@@ -1,0 +1,17 @@
+{
+  "PAGES": {
+      "HOME": {
+          "TITLE": "App works !",
+          "GO_TO_LOGIN": "Register"
+      },
+      "LOGIN": {
+        "TITLE": "Login page",
+        "INFO": "You must have an account to use this tool",
+        "EMAIL": "Email",
+        "EMAIL_ERROR": "Please enter valid email",
+        "PASSWORD": "Password",
+        "PASSWORD_ERROR": "Please enter valid password",
+        "VALIDATE": "Login"
+    }
+  }
+}

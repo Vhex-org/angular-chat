@@ -1,0 +1,13 @@
+{
+  "name": "vhex-chat",
+  "description": "Angular Electron sample",
+  "author": {
+    "name": "Vhex",
+    "email": "vhex_2023@labeip.epitech.eu"
+  },
+  "version": "1.0.1",
+  "main": "main.js",
+  "private": true,
+  "dependencies": {
+  }
+}
