@@ -11,7 +11,7 @@ import Room from '../Entity/Room.entity';
     providedIn: 'root',
 })
 export class ChatService {
-    public message$: BehaviorSubject<string> = new BehaviorSubject('');
+    public message$: BehaviorSubject<any> = new BehaviorSubject('');
     private socket = io(`${Config.serverUrl}/${Config.chat.default}`);
     private roomInfo: Room = {
         name: Config.chat.defaultRoom.defaultName,

@@ -29,8 +29,13 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/login']);
     } else {
       console.log("Linking to ws...");
-      this.subscriptions.push(this.chatService.getNewMessage().subscribe((message: string) => {
-        this.messagesList.push(message);
+      this.subscriptions.push(this.chatService.getNewMessage().subscribe((message: any) => {
+        console.log(message);
+        if (message.authorId === this.userService.getUser().userId) {
+          this.messagesList.push({ ...message, ownedByMe: true });
+        } else {
+          this.messagesList.push({ ...message, ownedByMe: false });
+        }
       }));
       this.subscriptions.push(this.chatService.listRooms(this.userService.getJwt()).subscribe({
         error: err => console.log(err),
