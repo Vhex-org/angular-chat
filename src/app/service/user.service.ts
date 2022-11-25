@@ -57,6 +57,7 @@ export class UserService {
               error: (err) => console.log(err),
               next: (userInfo: any) => {
                 this.user.email = data.email;
+                this.user.userId = userInfo._id;
                 this.user.username = userInfo.name;
                 this.user.role = userInfo.role;
                 this.user.jwt = resp;
