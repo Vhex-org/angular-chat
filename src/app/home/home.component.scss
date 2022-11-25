@@ -9,6 +9,10 @@
     padding: 0px 21px;
 }
 
+li::marker {
+    content: none;
+}
+
 #Vhexheader .logout {
     height: fit-content;
 }
@@ -74,8 +78,11 @@
     margin-bottom: 20px;
 }
 
-#VhexChatContainer .chat .msg-container li::marker {
-    display: none;
+#VhexChatContainer .chat .msg-container:has(.sent) {
+    margin-left: auto;
+}
+
+#VhexChatContainer .chat .msg-container {
 }
 
 #VhexChatContainer .chat .input-form input {
