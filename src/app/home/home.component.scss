@@ -13,6 +13,10 @@ li::marker {
     content: none;
 }
 
+#Vhexheader .title {
+    font-weight: normal;
+}
+
 #Vhexheader .logout {
     height: fit-content;
 }
@@ -30,6 +34,11 @@ li::marker {
     height: calc(100vh - 80px);
     overflow: scroll;
     display: flex;
+}
+
+#VhexChatContainer .groupChat li {
+    font-size: 24px;
+    margin-bottom: 16px;
 }
 
 #VhexChatContainer::-webkit-scrollbar {
@@ -76,6 +85,15 @@ li::marker {
     padding: 16px;
     max-width: 50%;
     margin-bottom: 20px;
+}
+
+#VhexChatContainer .chat .msg-container .message-date {
+    margin-bottom: 16px;
+}
+
+#VhexChatContainer .chat .msg-container .message-data {
+    line-height: 1.5;
+    font-size: 20px;
 }
 
 #VhexChatContainer .chat .msg-container:has(.sent) {
