@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 // back
@@ -12,7 +12,8 @@ import { Subscription } from 'rxjs';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
+  @ViewChildren('item')itemsElement: QueryList<ElementRef>;
 
   newMessage: string;
   messagesList: any[] = [];
@@ -54,6 +55,14 @@ export class HomeComponent implements OnInit {
       }))
       console.log("linked !");
     }
+  }
+
+  ngAfterViewInit() {
+    this.itemsElement.changes.subscribe(res=>{
+      setTimeout(()=>{
+        res.last.nativeElement.focus()
+      });
+    });
   }
 
   logout() {

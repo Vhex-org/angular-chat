@@ -19,7 +19,7 @@
       </div>
     </aside>
     <article class="chat">
-      <div *ngFor="let msg of messagesList" class="msg-container">
+      <div *ngFor="let msg of messagesList" class="msg-container" #item tabindex="1">
         <li [ngClass]="{ 'sent': msg.ownedByMe, 'received': !msg.ownedByMe }">
           <div class="message-date">{{ msg.timestamp | date }}</div>
           <div class="message-data">{{ msg.body }}</div>
