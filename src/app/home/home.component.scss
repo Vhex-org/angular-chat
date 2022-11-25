@@ -94,10 +94,13 @@ li::marker {
 #VhexChatContainer .chat .msg-container .message-data {
     line-height: 1.5;
     font-size: 20px;
+    overflow-wrap: break-word;
 }
 
-#VhexChatContainer .chat .msg-container:has(.sent) {
+#VhexChatContainer .chat .msg-container.sent {
     margin-left: auto;
+    background-color: #00425b;
+    max-width: 30%;
 }
 
 #VhexChatContainer .chat .msg-container {
