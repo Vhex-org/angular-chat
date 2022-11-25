@@ -1,3 +1,99 @@
-:host {
-  
+#Vhexheader {
+    height: 80px;
+    width: calc(100vw - 42px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #002635;
+    padding: 0px 21px;
+}
+
+#Vhexheader .logout {
+    height: fit-content;
+}
+
+#Vhexheader .logout button {
+    background-color: #B99641;
+    color: white;
+    border: 0;
+    border-radius: 16px;
+    padding: 8px 16px;
+    font-size: 24px;
+}
+
+#VhexChatContainer {
+    height: calc(100vh - 80px);
+    overflow: scroll;
+    display: flex;
+}
+
+#VhexChatContainer::-webkit-scrollbar {
+    display: none;
+}
+
+#VhexChatContainer .groupChat {
+    width: calc(16.67vw - 42px);
+    border-right: 1px solid #B99641;
+    padding: 36px 21px;
+}
+
+#VhexChatContainer .chat {
+    width: calc(100vw - 16.67vw - 56px);
+    height: calc(100vh - 80px - 84px - 42px - 64px);
+    margin: 42px 28px;
+    overflow: scroll;
+}
+
+#VhexChatContainer .chat::-webkit-scrollbar {
+    display: none;
+}
+
+#VhexChatContainer .chat .input-form label {
+    display: none;
+}
+
+#VhexChatContainer .chat .msg-container:first-of-type {
+    display: none;
+}
+
+#VhexChatContainer .chat .input-form {
+    display: flex;
+    position: fixed;
+    bottom: 42px;
+    width: calc(100vw - 16.67vw - 56px);
+}
+
+#VhexChatContainer .chat .msg-container {
+    background-color: #002635;
+    border-radius: 16px;
+    display: flex;
+    width: fit-content;
+    padding: 16px;
+    max-width: 50%;
+    margin-bottom: 20px;
+}
+
+#VhexChatContainer .chat .msg-container li::marker {
+    display: none;
+}
+
+#VhexChatContainer .chat .input-form input {
+    margin: 0 30px;
+    width: calc(100% - 60px - 64px);
+    border-radius: 16px;
+    background-color: transparent;
+    border: 1px solid #B99641;
+    font-size: 24px;
+    color: white;
+    padding: 0 24px;
+}
+
+#VhexChatContainer .chat .input-form button {
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+    background-color: #002635;
+    border: 1px solid #B99641;
+    color: #B99641;
 }

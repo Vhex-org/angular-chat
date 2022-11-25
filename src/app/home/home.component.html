@@ -1,15 +1,17 @@
 <div class="container">
   <div id="Vhexheader">
+    <div class="my-icon">
+
+    </div>
     <h1 class="title">
       {{ 'PAGES.HOME.TITLE' | translate }} - {{ currentRoom.name }}
     </h1>
-    <div>
+    <div class="logout">
       <button type="button" (click)="logout()">{{ 'PAGES.HOME.LOGOUT' | translate }}</button>
     </div>
   </div>
-  <section>
+  <section id="VhexChatContainer">
     <aside class="groupChat">
-      <h3>{{ 'PAGES.HOME.SPACES' | translate }}</h3>
       <div *ngFor="let r of rooms">
         <li (click)="joinRoom(r.chatId)">
           {{ r.name }}
@@ -17,7 +19,7 @@
       </div>
     </aside>
     <article class="chat">
-      <div *ngFor="let msg of messagesList">
+      <div *ngFor="let msg of messagesList" class="msg-container">
         <li>
           <div class="message-date">{{ msg.timestamp | date }}</div>
           <div class="message-data">{{ msg.body }}</div>
